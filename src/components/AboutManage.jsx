@@ -2,9 +2,7 @@
 // import { aboutUsDataLocal } from "../assets/data";
 import { Button } from "./subs/Button";
 
-import { fetchData } from "./FetchData";
-
-const aboutUsDataCMS = await fetchData();
+import { aboutUsDataCMS } from "./FetchData";
 
 const AboutManage = () => {
   return (

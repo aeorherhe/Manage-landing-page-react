@@ -6,7 +6,7 @@ const client = createClient({
   accessToken: `${import.meta.env.VITE_ABOUTS_ACCESS_TOKEN}`,
 });
 
-export const fetchData = async function () {
+const fetchData = async function () {
   try {
     const response = await client.getEntries({
       content_type: "manageLandingPageReact",
@@ -21,3 +21,5 @@ export const fetchData = async function () {
     console.error(error);
   }
 };
+
+export const aboutUsDataCMS = await fetchData();

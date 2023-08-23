@@ -31,8 +31,8 @@ Want some support on the challenge? [Join our Slack community](https://www.front
 
 ### Links
 
-- Solution URL: [solution]()
-- Live Site URL: [live site]()
+- Solution URL: [solution](https://github.com/aeorherhe/Manage-landing-page-react.git)
+- Live Site URL: [live site](aeorherhe-manage-landing-page.netlify.app/)
 
 ### Built with
 
