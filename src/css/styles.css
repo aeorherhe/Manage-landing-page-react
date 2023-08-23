@@ -64,6 +64,17 @@ p {
   line-height: 1.5;
 }
 
+@media (max-width: 40rem) {
+  h1 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: 0.9rem;
+  }
+}
 .btn {
   cursor: pointer;
   margin: 1rem 0;
@@ -251,7 +262,7 @@ p {
 }
 
 .about-item {
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .about-item-header {
