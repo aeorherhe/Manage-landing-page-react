@@ -22,9 +22,5 @@ const fetchData = async function () {
   }
 };
 
-<<<<<<< HEAD
-export const aboutUsDataCMS = await fetchData();
-=======
 const data = await fetchData();
 export const aboutUsDataCMS = data;
->>>>>>> b3bd003 (Fixed top level await code)
