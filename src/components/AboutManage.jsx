@@ -2,9 +2,9 @@
 // import { aboutUsDataLocal } from "../assets/data";
 import { Button } from "./subs/Button";
 
-import { aboutUsDataCMS } from "./FetchData";
+// import { FetchData } from "./FetchData";
 
-const AboutManage = () => {
+const AboutManage = ({ data }) => {
   return (
     <section className="about-section">
       <div className="about-header">
@@ -25,7 +25,7 @@ const AboutManage = () => {
 
       {/* for CMS data */}
       <div className="about-content">
-        {aboutUsDataCMS.map((items) => {
+        {data.map((items) => {
           return <AboutItems key={items.id} {...items} />;
         })}
       </div>

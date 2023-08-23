@@ -1,4 +1,6 @@
 import { createClient } from "contentful";
+import AboutManage from "./AboutManage";
+import { useEffect, useState } from "react";
 
 const client = createClient({
   space: `${import.meta.env.VITE_ABOUTS_SPACE_ID}`,
@@ -6,24 +8,34 @@ const client = createClient({
   accessToken: `${import.meta.env.VITE_ABOUTS_ACCESS_TOKEN}`,
 });
 
-const aboutsData = () => {
-  const fetchData = async function () {
+export const FetchData = () => {
+  const [data, setData] = useState([]);
+
+  const fetch = async function () {
     try {
       const response = await client.getEntries({
         content_type: "manageLandingPageReact",
       });
       const items = response.items;
       const data = items.map((item) => item.fields);
-      console.log("Hello World");
 
       // alternative
       // const items = response.items.map((item) => item.fields);
-      return data;
+      setData(data);
     } catch (error) {
       console.error(error);
     }
   };
-  return fetchData();
+
+  useEffect(() => {
+    fetch();
+  }, []);
+
+  return (
+    <>
+      <AboutManage data={data} />
+    </>
+  );
 };
 
-export const aboutUsDataCMS = await aboutsData();
+// export const aboutUsDataCMS = await aboutsData();
