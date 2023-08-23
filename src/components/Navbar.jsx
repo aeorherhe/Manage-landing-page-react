@@ -7,6 +7,7 @@ import { Links } from "./subs/Links";
 import { useGlobalContext } from "./GlobalCotext";
 import { useRef } from "react";
 import { Button } from "./subs/Button";
+import "../../public/images/logo.svg";
 
 const Navbar = () => {
   const NavLinks = pagesLinksData.slice(1, 6);
@@ -23,7 +24,7 @@ const Navbar = () => {
       >
         <div className="nav-logo-ctn">
           <a href="#" className="nav-logo">
-            <img src="/public/images/logo.svg" alt="nav logo" />
+            <img src="/images/logo.svg" alt="nav logo" />
           </a>
           <div className="nav-toggle" onClick={toggleNav}>
             {isNavOpen ? (

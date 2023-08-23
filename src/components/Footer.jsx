@@ -1,6 +1,7 @@
 import { Button } from "./subs/Button";
 import { pagesLinksData, socialLinksData } from "../assets/data";
 import { Links } from "./subs/Links";
+import "../../public/images/footer-logo.svg";
 
 const Footer = () => {
   return (
@@ -72,7 +73,7 @@ const FooterLogo = () => {
     <>
       <div className="footer-logo">
         <a href="#" className="footer-logo">
-          <img src="/public/images/footer-logo.svg" alt="nav logo" />
+          <img src="/images/footer-logo.svg" alt="nav logo" />
         </a>
       </div>
       <div className="copyright copyright-mobile">

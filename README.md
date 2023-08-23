@@ -32,7 +32,7 @@ Want some support on the challenge? [Join our Slack community](https://www.front
 ### Links
 
 - Solution URL: [solution](https://github.com/aeorherhe/Manage-landing-page-react.git)
-- Live Site URL: [live site](aeorherhe-manage-landing-page.netlify.app/)
+- Live Site URL: [live site](https://aeorherhe-manage-landing-page.netlify.app/)
 
 ### Built with
 

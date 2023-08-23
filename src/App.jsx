@@ -1,5 +1,4 @@
-// import AboutManage from "./components/AboutManage";
-import { FetchData } from "./components/FetchData";
+import AboutManage from "./components/AboutManage";
 import Footer from "./components/Footer";
 import { GlobalProvider } from "./components/GlobalCotext";
 import Hero from "./components/Hero";
@@ -13,8 +12,7 @@ function App() {
       <main className="main">
         <Navbar />
         <Hero />
-        {/* <AboutManage /> */}
-        <FetchData />
+        <AboutManage />
         <Reviews />
         <Simplify />
         <Footer />
