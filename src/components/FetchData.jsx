@@ -6,21 +6,24 @@ const client = createClient({
   accessToken: `${import.meta.env.VITE_ABOUTS_ACCESS_TOKEN}`,
 });
 
-const fetchData = async function () {
-  try {
-    const response = await client.getEntries({
-      content_type: "manageLandingPageReact",
-    });
-    const items = response.items;
-    const data = items.map((item) => item.fields);
+const aboutsData = () => {
+  const fetchData = async function () {
+    try {
+      const response = await client.getEntries({
+        content_type: "manageLandingPageReact",
+      });
+      const items = response.items;
+      const data = items.map((item) => item.fields);
+      console.log("Hello World");
 
-    // alternative
-    // const items = response.items.map((item) => item.fields);
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
+      // alternative
+      // const items = response.items.map((item) => item.fields);
+      return data;
+    } catch (error) {
+      console.error(error);
+    }
+  };
+  return fetchData();
 };
 
-const data = await fetchData();
-export const aboutUsDataCMS = data;
+export const aboutUsDataCMS = await aboutsData();
