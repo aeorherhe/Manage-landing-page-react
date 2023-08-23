@@ -1,0 +1,27 @@
+// general
+@use "./base/resets";
+
+/***************
+ Project Styles
+***************/
+
+// navbar
+@use "./sections/_navbar";
+
+// hero
+@use "./sections/_hero";
+
+// about
+@use "./sections/_abouts";
+
+// reviews
+@use "./sections/_reviews";
+
+// simplify
+@use "./sections/_simplify";
+
+// footer
+@use "./sections/_footer";
+
+// my profile
+@use "./sections/_myProfile";

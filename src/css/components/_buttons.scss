@@ -1,0 +1,20 @@
+@use "../base/variables" as *;
+
+.btn {
+  cursor: pointer;
+  margin: 1rem 0;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: $White;
+  text-transform: capitalize;
+  border-radius: 2rem;
+  letter-spacing: 0.1rem;
+  background-color: $Bright-Red;
+  white-space: nowrap;
+  &:hover {
+    background-color: $Bright-Red-hover;
+  }
+}

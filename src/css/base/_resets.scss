@@ -1,0 +1,30 @@
+@use "../base/variables" as *;
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(/public/images/bg-tablet-pattern.svg),
+    url(/public/images/bg-tablet-pattern.svg);
+  background-repeat: no-repeat;
+  background-position: top -20rem right -30rem, center right -30rem;
+  background-color: $bg-body;
+  font-family: "Inter", "Be Vietnam Pro", Arial, Helvetica, sans-serif;
+}
+
+@media (min-width: 55rem) {
+  body {
+    background-position: top -5rem right -15rem, center left -20rem;
+  }
+}
+
+@media (min-width: 75rem) {
+  body {
+    background-position: top -10rem right -10rem, center left -20rem;
+  }
+}

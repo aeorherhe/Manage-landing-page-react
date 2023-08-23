@@ -1,0 +1,78 @@
+@use "../index" as *;
+
+.footer-section {
+  background-color: $Very-Dark-Blue;
+  color: $White;
+  padding: 5rem 2rem;
+}
+
+.form-center {
+  // border: $line-3;
+  @include flex(center, row, 1rem, _);
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+}
+
+.copyright-desktop {
+  display: none;
+}
+
+.footer-lists {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2rem;
+}
+
+.social-links {
+  @include flex(center, row, 1.5rem, center);
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+
+.footer-logo,
+.copyright {
+  text-align: center;
+}
+
+@media screen and (min-width: 55rem) {
+  .footer {
+    max-width: 100rem;
+    @include flex(flex-start, row-reverse, _, space-between);
+    margin: 0rem auto;
+
+    .footer-logo {
+      text-align: left;
+    }
+  }
+
+  .copyright-mobile {
+    display: none;
+  }
+
+  .copyright-desktop {
+    margin-top: 5rem;
+    display: block;
+  }
+
+  .form-group {
+    // border: $line-3;
+    @include flex(f, column, _, _);
+  }
+
+  .footer-logos {
+    img {
+      margin-top: 2.5rem;
+    }
+    // border: $line-2;
+  }
+
+  .footer-lists {
+    gap: 0 2rem;
+    padding: 0;
+  }
+}

@@ -1,0 +1,44 @@
+@use "../index" as *;
+
+.hero-center {
+  @include flex(center, column, 2rem, center);
+  img {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  padding: 1rem;
+  p {
+    margin: 2rem auto;
+  }
+}
+
+@media (min-width: 55rem) {
+  .hero-center {
+    margin: 10rem auto;
+    max-width: 100rem;
+    @include flex(center, row-reverse, _, space-between);
+  }
+
+  .hero-img {
+    width: 50rem;
+  }
+
+  .hero-content {
+    text-align: left;
+    max-width: 35rem;
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}

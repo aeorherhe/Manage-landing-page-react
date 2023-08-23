@@ -1,0 +1,493 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Hanken+Grotesk:wght@500;700;800&family=Inter:wght@400;700&family=Roboto:wght@400;700&display=swap");
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+//   /* general variables */
+$shadow-1: 0 0 5px rgb(250, 234, 230);
+$shadow-2: 0px 0px 20px 2px rgba(150, 150, 150, 0.3);
+$transition: all 0.3s linear;
+$transition-2: all 0.5s ease-in-out;
+$line-1: 2px solid rgba(116, 108, 113, 0.5);
+$line-2: 2px solid rgba(28, 28, 192, 0.5);
+$line-3: 2px solid rgba(9, 224, 88, 0.5);
+
+// colors
+$White: hsl(0, 0%, 100%);
+$Dark: #303b5a;
+$Persian-blue: #2421ca00;
+$black: #0f172a;
+$bg-body: hsla(13, 100%, 96%, 0.2);
+
+// /******** variables for this project ********/
+$Light-red: hsl(0, 100%, 67%);
+$Orangey-yellow: hsl(39, 100%, 56%);
+$Green-teal: hsl(166, 100%, 37%);
+$Cobalt-blue: hsl(234, 85%, 45%);
+
+// ## Gradients
+// background
+$Light-slate-blue: #7857ff;
+$Light-royal-blue: #2e2be9;
+// circle
+$Persian-blue: #27108acb;
+$Violet-blue: #4e21ca;
+
+// Neutral
+$Pale-blue: hsl(221, 100%, 96%);
+$Light-lavender: hsl(241, 100%, 89%);
+
+// This Project
+$Bright-Red: hsl(12, 88%, 59%);
+$Bright-Red-hover: hsla(12, 88%, 59%, 0.7);
+$Dark-Blue: hsl(228, 39%, 23%);
+$Dark-Grayish-Blue: hsl(227, 12%, 61%);
+$Very-Dark-Blue: hsl(233, 12%, 13%);
+$Very-Pale-Red: hsl(13, 100%, 96%);
+$Vary-Light-Gray: hsl(0, 0%, 98%);
+
+// mixins
+@mixin flex($align, $direction, $gap, $justify) {
+  display: flex;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+  justify-content: $justify;
+}
+
+body {
+  background-color: $bg-body;
+  font-family: "Inter", "Be Vietnam Pro", Arial, Helvetica, sans-serif;
+}
+
+.btn {
+  cursor: pointer;
+  margin: 1rem 0;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: $White;
+  text-transform: capitalize;
+  border-radius: 2rem;
+  letter-spacing: 0.1rem;
+  background-color: $Bright-Red;
+  white-space: nowrap;
+  &:hover {
+    background-color: $Bright-Red-hover;
+  }
+}
+
+// general
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  text-transform: capitalize;
+  margin: 1rem 0;
+  display: inline-block;
+  white-space: nowrap;
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.25rem;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $Very-Dark-Blue;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+/*************** 
+Project Styles  
+***************/
+
+// navbar
+.navbar {
+  background-color: $White;
+  box-shadow: $shadow-1;
+  padding: 0.5rem 2rem;
+}
+
+.nav-menu-items-ctn {
+  position: relative;
+}
+
+.nav-menu-ctn {
+  text-align: center;
+  position: absolute;
+  transition: $transition;
+  overflow: hidden;
+  background-color: $White;
+  box-shadow: $shadow-2;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.nav-logo-ctn {
+  @include flex(center, row, 2rem, space-between);
+}
+
+.nav-toggle {
+  cursor: pointer;
+}
+
+.btn-desktop {
+  display: none;
+}
+
+@media (min-width: 55rem) {
+  .navbar {
+    box-shadow: none;
+    background-color: transparent;
+    max-width: 100rem;
+    margin: 0rem auto;
+    @include flex(center, row, 2rem, space-between);
+  }
+
+  .nav-menu-ctn {
+    background-color: transparent;
+    height: fit-content !important;
+    position: static;
+    width: auto;
+    box-shadow: none;
+  }
+
+  .nav-menu {
+    @include flex(center, row, 2rem, center);
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  h3 {
+    font-size: 1.4rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+  }
+
+  .btn-desktop {
+    display: inline-block;
+  }
+}
+
+// hero
+.hero-center {
+  height: 90vh;
+  @include flex(center, column, 2rem, center);
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.hero-content {
+  text-align: center;
+  padding: 1rem;
+  p {
+    margin: 2rem auto;
+  }
+}
+
+@media (min-width: 55rem) {
+  .hero-center {
+    margin: 10rem auto;
+    height: fit-content;
+    max-width: 100rem;
+    @include flex(center, row-reverse, _, space-between);
+  }
+
+  .hero-img {
+    width: 50rem;
+  }
+
+  .hero-content {
+    text-align: left;
+    max-width: 35rem;
+    h1 {
+      font-size: 3.5rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// about
+.about-section {
+  padding: 2rem;
+  margin: 5rem auto;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-item {
+  margin-bottom: 3rem;
+}
+
+.about-item-header {
+  @include flex(center, row, 1rem, _);
+  border-radius: 0.5rem;
+  background-color: $Very-Pale-Red;
+  margin: 1rem 0;
+  .btn {
+    margin: 0;
+  }
+}
+
+@media (min-width: 55rem) {
+  .about-section {
+    max-width: 100rem;
+    @include flex(_, row, 4rem, space-between);
+  }
+
+  .about-header {
+    text-align: left;
+  }
+}
+
+// reviews
+.reviews-section {
+  margin: 10rem 0;
+  text-align: center;
+}
+
+.reviews-header {
+  margin-bottom: 2rem;
+}
+
+.reviews-content {
+  height: 35rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-item {
+  width: 100%;
+  padding: 4rem 2rem;
+  position: absolute;
+  transition: $transition;
+  img {
+    margin-bottom: -4rem;
+    object-fit: cover;
+  }
+}
+
+.reviews-item-text {
+  border-radius: 0.5rem;
+  background-color: $Light-red;
+  // background-color: $Vary-Light-Gray;
+  padding: 6rem 1rem 2rem;
+}
+
+.reviews-dots {
+  @include flex(center, row, 1rem, center);
+  padding: 1rem 0;
+  .dots {
+    cursor: pointer;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: $Dark-Grayish-Blue;
+  }
+}
+
+@media (min-width: 55rem) {
+  .reviews-content {
+    height: fit-content;
+    overflow: visible;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews-item {
+    position: static;
+    transform: translateX(0) !important;
+  }
+
+  .reviews-dots {
+    display: none;
+  }
+}
+
+@media (min-width: 95rem) {
+  .reviews-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// simplify
+.simplify-section {
+  text-align: center;
+  background-color: $Bright-Red;
+  padding: 7rem 3rem;
+  h1 {
+    color: $White;
+  }
+  .btn {
+    background-color: $White;
+    color: $Bright-Red;
+  }
+}
+
+// footer
+.footer-section {
+  background-color: $Very-Dark-Blue;
+  color: $White;
+  padding: 5rem 2rem;
+}
+
+.form-center {
+  // border: $line-3;
+  @include flex(center, row, 1rem, _);
+  input {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
+}
+
+.copyright-desktop {
+  display: none;
+}
+
+.footer-lists {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2rem;
+}
+
+.social-links {
+  @include flex(center, row, 1.5rem, center);
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+
+.footer-logo,
+.copyright {
+  text-align: center;
+}
+
+@media screen and (min-width: 55rem) {
+  .simplify-content {
+    max-width: 100rem;
+    margin: 0 auto;
+    @include flex(center, row, 4rem, space-between);
+    .btn {
+      white-space: nowrap;
+    }
+    h1 {
+      max-width: 35rem;
+      text-align: left;
+    }
+  }
+
+  .footer {
+    max-width: 100rem;
+    @include flex(flex-start, row-reverse, _, space-between);
+    margin: 0rem auto;
+
+    .footer-logo {
+      text-align: left;
+    }
+  }
+
+  .copyright-mobile {
+    display: none;
+  }
+
+  .copyright-desktop {
+    margin-top: 5rem;
+    display: block;
+  }
+
+  .form-group {
+    // border: $line-3;
+    @include flex(f, column, _, _);
+  }
+
+  .footer-logos {
+    img {
+      margin-top: 2.5rem;
+    }
+    // border: $line-2;
+  }
+
+  .footer-lists {
+    gap: 0 2rem;
+    padding: 0;
+  }
+}
+
+// my profile
+.my-profile {
+  align-self: self-end;
+  align-items: center;
+  background-color: $Dark;
+  color: $White;
+  display: flex;
+  font-size: 1rem;
+  gap: 1.5rem;
+  justify-content: center;
+  padding: 0.75rem;
+  text-align: center;
+  width: 100%;
+}
+
+.my-profile > a {
+  cursor: pointer;
+  color: $Bright-Red;
+  text-decoration: none;
+}
+
+.my-profile-icons a {
+  cursor: pointer;
+  color: $White;
+  display: inline-block;
+  margin: 0 5px;
+}
+
+@media screen and (max-width: 45rem) {
+  .my-profile {
+    font-size: 1rem;
+  }
+
+  .my-profile-icons a:first-of-type,
+  .my-profile-icons a:last-of-type {
+    display: none;
+  }
+}

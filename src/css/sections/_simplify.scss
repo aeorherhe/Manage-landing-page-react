@@ -1,0 +1,38 @@
+@use "../index" as *;
+
+.simplify-section {
+  text-align: center;
+  background-color: $Bright-Red;
+  background-image: url(/public/images/bg-simplify-section-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding: 7rem 3rem;
+  h1 {
+    color: $White;
+  }
+  .btn {
+    background-color: $White;
+    color: $Bright-Red;
+  }
+}
+
+@media screen and (min-width: 55rem) {
+  .simplify-section {
+    background-image: url(/public/images/bg-simplify-section-desktop.svg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  .simplify-content {
+    max-width: 100rem;
+    margin: 0 auto;
+    @include flex(center, row, 4rem, space-between);
+    .btn {
+      white-space: nowrap;
+    }
+    h1 {
+      max-width: 35rem;
+      text-align: left;
+    }
+  }
+}

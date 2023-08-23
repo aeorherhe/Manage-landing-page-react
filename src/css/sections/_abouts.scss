@@ -1,0 +1,36 @@
+@use "../index" as *;
+
+.about-section {
+  padding: 2rem;
+  margin: 5rem auto;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-item {
+  margin-bottom: 3rem;
+}
+
+.about-item-header {
+  @include flex(center, row, 1rem, _);
+  border-radius: 0.5rem;
+  background-color: $Very-Pale-Red;
+  margin: 1rem 0;
+  .btn {
+    margin: 0;
+  }
+}
+
+@media (min-width: 55rem) {
+  .about-section {
+    max-width: 100rem;
+    @include flex(_, row, 4rem, space-between);
+  }
+
+  .about-header {
+    text-align: left;
+  }
+}

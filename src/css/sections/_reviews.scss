@@ -1,0 +1,73 @@
+@use "../index" as *;
+
+.reviews-section {
+  margin: 10rem 0;
+  text-align: center;
+}
+
+.reviews-header {
+  margin-bottom: 2rem;
+}
+
+.reviews-content {
+  height: 27rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-item {
+  width: 100%;
+  padding: 4rem 2rem;
+  position: absolute;
+  transition: $transition;
+  img {
+    margin-bottom: -4rem;
+    object-fit: cover;
+  }
+}
+
+.reviews-item-text {
+  border-radius: 0.5rem;
+  background-color: $Vary-Light-Gray;
+  padding: 6rem 1rem 2rem;
+}
+
+.reviews-dots {
+  @include flex(center, row, 1rem, center);
+  padding: 1rem 0;
+  .dots {
+    cursor: pointer;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: $Light-Gray;
+  }
+
+  .active {
+    background-color: $Dark-Grayish-Blue;
+  }
+}
+
+@media (min-width: 55rem) {
+  .reviews-content {
+    height: fit-content;
+    overflow: visible;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .reviews-item {
+    position: static;
+    transform: translateX(0) !important;
+  }
+
+  .reviews-dots {
+    display: none;
+  }
+}
+
+@media (min-width: 95rem) {
+  .reviews-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
